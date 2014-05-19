@@ -1,0 +1,71 @@
+.reviews
+  .quote
+    width: #{(40 / $font-size) + "em"}
+    height: #{(42 / $font-size) + "em"}
+    margin: #{(78 / $font-size) + "em"} auto #{(25 / $font-size) + "em"} auto
+    background:
+      image: url(../img/quote.png)
+      position: 0% 0%
+      repeat: no-repeat
+      color: transparent
+    +hide-text()
+    +background-size(100% auto)
+  .carousel
+    position: relative
+    top: 0
+    left: 0
+    width: 100% * 4
+    height: #{((260 + 42 + 78 + 25) / $font-size) + "em"}
+    overflow: hidden
+    .item
+      width: #{(100 / 4) + "%"}
+      height: 100%
+      overflow: hidden
+      display: block
+    .icon-and-title
+      +clearfix()
+    .icon, .title, .description
+      max-width: 100%
+      margin: 0 auto
+      background:
+        position: 0% 0%
+        repeat: no-repeat
+        color: transparent
+      +hide-text()
+      +background-size(100%)
+    .icon
+      width: #{(40 / $font-size) + "em"}
+      height: #{(40 / $font-size) + "em"}
+      margin:
+        top: #{(12 / $font-size) + "em"}
+        bottom: #{(12 / $font-size) + "em"}
+    .title
+      height: #{(41 / $font-size) + "em"}
+  .carousel-navigation
+    position: relative
+    display: inline-block
+    bottom: 0
+    left: 0
+    margin: 0 auto #{(68 / $font-size) + "em"} auto
+    .item
+      border: 1px solid #03b2a1
+      &:first-child, &.active
+        background-color: #03b2a1
+  $ur-title: 204 238 150
+  $ur-desc-w: 298 324 352
+  $ur-desc-h: 98 106 106
+  $i: 1
+  @each $ur in "jason-fried" "phill-ryu" "steve-chen"
+    .#{$ur}
+      .description
+        width: #{(nth($ur-desc-w, $i) / $font-size) + "em"}
+        height: #{(nth($ur-desc-h, $i) / $font-size) + "em"}
+        background-image: url(../img/desc-#{$ur}.png)
+      .icon
+        background-image: url(../img/icon-#{$ur}.png)
+      .title
+        background-image: url(../img/title-#{$ur}.png)
+        width: #{(nth($ur-title, $i) / $font-size) + "em"}
+    $i: $i + 1
+  .buttons
+    display: none

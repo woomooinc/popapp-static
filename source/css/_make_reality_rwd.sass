@@ -1,0 +1,31 @@
+.make-anyones-app-a-reality
+  height: #{900 / $font-size + "em"}
+  +background-size(100% auto)
+  .carousel
+    width: 100%
+    text-align: center
+    .item
+      display: inline-block
+      height: auto
+    .first-child
+      width: 100%
+      height: auto
+      display: block
+      > .description
+        width: #{(972 / $font-size) + "em"}
+        max-width: 95%
+        height: #{(148 / $font-size) + "em"}
+        margin: #{((254 - 16) / $font-size) + "em"} auto 0 auto
+        background:
+          image: url(../img/reality.png)
+          position: 50% 50%
+          repeat: no-repeat
+          color: transparent
+        +background-size(100% auto)
+    @each $item in "entrepreneurs" "ad-agencies" "designers" "students"
+      .#{$item}
+        width: #{(234 / $font-size) + "em"}
+        height: #{(248 / $font-size) + "em"}
+        margin-top: #{(44 / $font-size) + "em"}
+  .carousel-navigation
+    display: none

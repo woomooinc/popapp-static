@@ -1,0 +1,25 @@
+.download-app
+  background:
+    image: none
+    position: 50% 50%
+    repeat: no-repeat
+    color: #4d4d4d /* rgba(77, 77, 77, 1) */
+  .title
+    display: none
+  .download-ios,
+  .download-android
+    display: none
+  .mask
+    display: none
+  .download-pop
+    display: block
+    margin: #{(28 / $font-size) + "em"} auto
+    width: #{(160 / $font-size) + "em"}
+    height: #{(44 / $font-size) + "em"}
+    background:
+      image: url(../img/btn-download-m.png)
+      position: 0% 0%
+      repeat: no-repeat
+      color: transparent
+    +hide-text()
+    +background-size(100% auto)

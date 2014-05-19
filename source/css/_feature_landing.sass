@@ -1,0 +1,30 @@
+.feature-landing
+  background: url(../img/bg_feature_m.png) 50% 50% no-repeat white
+  .landing-title
+    width: #{(330 / $font-size) + "em"}
+    max-width: 320px
+    height: #{(252 / $font-size) + "em"}
+    margin: #{(90 / $font-size) + "em"} auto #{(120 / $font-size) + "em"} auto
+    background:
+      image: url(../img/feature_title.png)
+      position: 50% 50%
+      repeat: no-repeat
+      color: transparent
+    +hide-text()
+    +background-size(100% auto)
+  .scroll-down
+    width: #{(44 / $font-size) + "em"}
+    height: #{(44 / $font-size) + "em"}
+    border: 0 none
+    padding: 0
+    margin-bottom: #{(24 / $font-size) + "em"}
+    display: inline-block
+    cursor: pointer
+    background:
+      image: url(../img/arrow.png)
+      position: 0 0
+      repeat: no-repeat
+      color: transparent
+    +hide-text()
+    +background-size(100% auto)
+    +transform(rotateZ(90deg))

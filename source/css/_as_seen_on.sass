@@ -1,0 +1,43 @@
+.as-seen-on
+  display: none
+
+@media(min-width: 48em)
+  .as-seen-on
+    height: #{(150 / $font-size) + "em"}
+    color: #b3b3b3
+    text-align: center
+    display: block
+    .thin
+      font:
+        style: italic
+        weight: 100
+        size: 1.2em
+    $item_w: 204 130 262 220
+    $i: 1
+    @each $item in "smashing-mg" "tnw" "hack-news" "codesign"
+      .#{$item}
+        width: #{nth($item_w, $i) / $font-size + "em"}
+        max-width: #{nth($item_w, $i) / $font-size + "em"}
+        height: #{66 / $font-size + "em"}
+        margin: 0 1em
+        display: inline-block
+        background:
+          image: url(../img/#{$item}.png)
+          position: 50% 0
+          repeat: no-repeat
+          color: transparent
+        +background-size(100% auto)
+        &:hover, &:active
+          background-position: 50% 100%
+        a
+          display: inline-block
+          width: 100%
+          height: 100%
+          +hide-text()
+      $i: $i + 1
+
+@media(-webkit-device-pixel-ratio: 2) and (min-width: 48em)
+  .as-seen-on
+    @each $item in "smashing-mg" "tnw" "hack-news" "codesign"
+      .#{$item}
+        background-image: url(../img/#{$item}@2x.png)

@@ -1,0 +1,30 @@
+.popapp-landing
+  height: #{1000 / $font-size + "em"}
+  .mask
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background: rgba(0, 0, 0, 0.25)
+    z-index: 0
+  .landing-title
+    position: relative
+    width: #{(780 / $font-size) + "em"}
+    max-width: 90%
+    height: #{(243 / $font-size) + "em"}
+    display: block
+    margin: #{(180 / $font-size) + "em"} auto #{(33 / $font-size) + "em"} auto
+    background:
+      image: url(../img/landing-title.png)
+  .download-app
+    display: none
+  .download-from-store
+    display: block
+    position: relative
+  .watch-video
+    position: relative
+    width: #{(102 / $font-size) + "em"}
+    height: #{(102 / $font-size) + "em"}
+    margin: #{(42 / $font-size) + "em"}  auto #{(70 / $font-size) + "em"} auto
+    background-image: url(../img/play-video.png)

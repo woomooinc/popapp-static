@@ -1,0 +1,132 @@
+@media(-webkit-min-device-pixel-ratio: 1.5)
+  .header
+    .logo
+      background-image: url(../img/pop-m-1@2x.png)
+    &.float .logo
+      background-image: url(../img/pop-m-2@2x.png)
+  .popapp-landing
+    .landing-title
+      background-image: url(../img/landing-title-m@2x.png)
+    .download-app
+      background-image: url(../img/btn-download-m@2x.png)
+    .watch-video
+      background-image: url(../img/btn-watch-m@2x.png)
+  .simple-intutive-powerful
+    .simple
+      background-image: url(../img/simple@2x.png)
+    .learn-more
+      background-image: url(../img/learn-more-m@2x.png)
+  .make-anyones-app-a-reality
+    @each $item in "entrepreneurs" "ad-agencies" "designers" "students"
+      .#{$item}
+        background-image: url(../img/#{$item}@2x.png)
+  .integrates-into-your-workflow
+    .intergrate
+      background-image: url(../img/intergrate@2x.png)
+    .dropbox
+      background-image: url(../img/dropbox_m@2x.png)
+  .reviews
+    .quote
+      background-image: url(../img/quote@2x.png)
+    @each $ur in "jason-fried" "phill-ryu" "steve-chen"
+      .#{$ur}
+        .description
+          background-image: url(../img/desc-#{$ur}@2x.png)
+        .icon
+          background-image: url(../img/icon-#{$ur}@2x.png)
+        .title
+          background-image: url(../img/title-#{$ur}@2x.png)
+  .download-from-store
+    .download-ios
+      background-image: url(../img/app-store@2x.png)
+    .download-android
+      background-image: url(../img/google-play-btn@2x.png)
+  .social-network .mobile
+    &.twitter
+      background-image: url(../img/twitter-active@2x.png)
+    &.facebook
+      background-image: url(../img/facebook-active@2x.png)
+
+  /* Feature */
+  .feature-landing
+    .landing-title
+      background-image: url(../img/feature_title@2x.png)
+    .scroll-down
+      background-image: url(../img/arrow@2x.png)
+  .ssl-encryption
+    .lock-icon
+    .description
+      background-image: url(../img/feature_128bit@2x.png)
+  .fast-importing
+    .description
+      background-image: url(../img/feature_import@2x.png)
+  .rapid-duplication
+    .description
+      background-image: url(../img/feature_rapid@2x.png)
+  .organize-your-projects
+    .description
+      background-image: url(../img/feature_organize@2x.png)
+  .transitions
+    .description
+      background-image: url(../img/feature_transition@2x.png)
+  .gestures
+    .description
+      background-image: url(../img/feautre_gesture@2x.png)
+  .dropbox-sync
+    .description
+      background-image: url(../img/feature_dropbox@2x.png)
+    .dropbox
+      background-image: url(../img/dropbox_m@2x.png)
+  .sections.share
+    .description
+      background-image: url(../img/feature_share@2x.png)
+  .co-working-mode
+    .description
+      background-image: url(../img/feature_co-working@2x.png)
+  .multi-platform-support
+    .description
+      background-image: url(../img/feature_multi@2x.png)
+
+  /* Sketchpad */
+  .sketchpad
+    .sections
+      > .links
+        @each $item in "facebook" "twitter" "email" "link"
+          .#{$item}
+            background-image: url(../img/m-#{$item}@2x.png)
+            &:hover
+              background-position: 0 100%
+  .notebook-sketchpad
+    .extends
+      background-image: url(../img/sketchpad_iphone5-nb-m@2x.jpg)
+    .description
+      height: #{332 / $font-size + "em"}
+      background-image: url(../img/sketchpad_notebook-spec@2x.png)
+
+  .iphone5-sketchpad
+    .extends
+      background-image: url(../img/sketchpad_iphone5-m@2x.png)
+    .description
+      height: #{342 / $font-size + "em"}
+      background-image: url(../img/sketchpad_iphone5-spec@2x.png)
+
+  .iphone4-sketchpad
+    .extends
+      background-image: url(../img/sketchpad_iphone4-m@2x.png)
+    .description
+      height: #{338 / $font-size + "em"}
+      background-image: url(../img/sketchpad_iphone4-spec@2x.png)
+
+  .ipad-sketchpad
+    .extends
+      background-image: url(../img/sketchpad_ipad-m@2x.png)
+    .description
+      height: #{268 / $font-size + "em"}
+      background-image: url(../img/sketchpad_ipad-spec@2x.png)
+
+  .nexus5-sketchpad
+    .extends
+      background-image: url(../img/sketchpad_android-m@2x.png)
+    .description
+      height: #{338 / $font-size + "em"}
+      background-image: url(../img/sketchpad_nexus5-spec@2x.png)

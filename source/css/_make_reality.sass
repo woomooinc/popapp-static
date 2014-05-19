@@ -1,0 +1,39 @@
+.make-anyones-app-a-reality
+  background:
+    image: url(../img/POPusers_color.png)
+    position: 10% 50%
+    repeat: no-repeat
+    color: #333333
+  +background-size(auto 100%)
+  .carousel
+    position: absolute
+    top: 0
+    left: 0
+    width: 100% * 5
+    height: 100%
+    overflow: hidden
+    .item
+      display: block
+      width: #{(100 / 5) + "%"}
+      height: 100%
+    .first-child
+      > .description
+        width: #{(314 / $font-size) + "em"} /*314px*/
+        height: #{(170 / $font-size) + "em"} /* 170px*/
+        margin: #{((178 - 16) / $font-size) + "em"} auto 0 auto
+        background:
+          image: url(../img/popCan.png)
+          position: 50% 50%
+          repeat: no-repeat
+          color: transparent
+        +background-size(100% auto)
+    @each $item in "entrepreneurs" "ad-agencies" "designers" "students"
+      .#{$item}
+        width: #{(234 / $font-size) + "em"}
+        height: #{(248 / $font-size) + "em"}
+        background:
+          image: url(../img/#{$item}.png)
+          position: 50% 50%
+          repeat: no-repeat
+          color: transparent
+        +background-size(100% auto)

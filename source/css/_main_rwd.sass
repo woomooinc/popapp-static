@@ -1,0 +1,161 @@
+@media(min-width: 48em)
+  #container
+    top: 0
+    margin: 0 auto
+  .header
+    padding-top: #{(22 / $font-size) + "em"}
+    .logo
+      width: #{(126 / $font-size) + "em"}
+      height: #{(54 / $font-size) + "em"}
+      margin:
+        top: 0
+        left: 4.733%
+      background-image: url(../img/pop-1.png)
+    &.float .logo
+      width: #{(86 / $font-size) + "em"}
+      height: #{(34 / $font-size) + "em"}
+      background-image: url(../img/pop-2.png)
+  #navigation
+    display: inline-block
+    float: right
+    width: auto
+    height: 2.333em
+    margin:
+      top: 0.533%
+      right: 4.733%
+    .hidden-mobile
+      display: block
+    ul li
+      font:
+        size: 1.285em
+        family: "Gotham Book", sans-serif
+      display: inline-block
+      color: white
+      vertical-align: top
+      &.nav
+        margin: 0 0.22em
+        padding: 0.11em 0.66em
+        border: 2px solid transparent
+        &.active
+          border-color: #38ffec
+          color: #38ffec
+          a
+            color: #38ffec
+        &.login:hover
+          color: white
+          background-color: #38ffec
+          a
+            color: white
+      &.countries
+        width: 2em
+        height: auto
+        margin:
+          right: 0em
+          top: -0.7em
+      &.country
+        position: relative
+        width: 100%
+        height: 2em
+        display: block
+        overflow: hidden
+        +opacity(0.3)
+        &.active
+          +opacity(1)
+    @each $country in "us" "tw" "jp"
+      .#{$country}
+        background:
+          image: url(../img/language-#{$country}.png)
+          position: 50% 50%
+          repeat: no-repeat
+          color: transparent
+  #footer
+    height: #{(190 / $font-size) + "em"}
+  .social-network
+    display: inline-block
+    .mobile
+      display: none
+    .desktop
+      display: block
+      height: 2em
+      float: left
+      &.facebook,
+      &.twitter
+        margin-right: 1em
+      &.twitter-to
+  .download-from-store
+    display: block
+    text-align: center
+    overflow: hidden
+    margin-bottom: #{(25 / $font-size) + "em"}
+    .download-ios,
+    .download-android
+      width: #{(202 / $font-size) + "em"}
+      height: #{(66 / $font-size) + "em"}
+      display: inline-block
+      background:
+        position: 0% 0%
+        repeat: no-repeat
+        color: transparent
+      +hide-text()
+      +background-size(100% auto)
+    .download-ios
+      margin-right: #{(30 / $font-size) + "em"}
+      background-image: url(../img/app-store.png)
+    .download-android
+      background-image: url(../img/google-play-btn.png)
+
+  /* RWD, POPAPP landing */
+  @import _landing_rwd
+
+  /* RWD, Intutive */
+  @import _intutive_rwd
+
+  /* Build */
+  @import _build_rwd
+
+  /* Work On */
+  @import _work_on_rwd
+
+  /* RWD, Make reality */
+  @import _make_reality_rwd
+
+  /* RWD, Integrates */
+  @import _intergates_rwd
+
+  /* RWD, Reviews */
+  @import _reviews_rwd
+
+  /* Download POPAPP */
+  @import _download_app_rwd
+
+@media(min-width: 93.75em)
+  .popapp-landing
+    +background-size(100% auto)
+
+@media(-webkit-min-device-pixel-ratio: 1.5) and (min-width: 48em)
+  .header
+    .logo
+      background-image: url(../img/pop-1@2x.png)
+    &.float .logo
+      background-image: url(../img/pop-2@2x.png)
+
+  /* RWD, POPAPP landing */
+  @import _landing_rwd_2x
+
+  /* RWD, Intutive */
+  @import _intutive_rwd_2x
+
+  /* Work On */
+  @import _work_on_rwd_2x
+
+  /* RWD, Make reality */
+  @import _make_reality_rwd_2x
+
+  /* RWD, Integrates */
+  @import _intergates_rwd_2x
+
+  /* RWD, Reviews */
+  @import _reviews_rwd_2x
+
+  /* Download POPAPP */
+  @import _download_app_rwd_2x

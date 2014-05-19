@@ -1,0 +1,150 @@
+@media(min-width: 48em)
+  .sketchpad
+    .sections
+      > .links
+        text-align: right
+        width: 100%
+        max-width: #{564 / $font-size + "em"}
+        margin: #{28 / $font-size + "em"} auto #{(50 / $font-size) + "em"} auto
+        .button
+          display: inline-block
+          float: left
+          width: #{166 / $font-size + "em"}
+          height: #{52 / $font-size + "em"}
+          background:
+            position: 0 0
+            repeat: no-repeat
+            color: transparent
+          +hide-text()
+          +background-size(100% auto)
+          &:hover, &.active
+            background-position: 0 100%
+          &.purchance
+            background-image: url(../img/purchace-btn.png)
+          &.free-download
+            background-image: url(../img/free-download-btn.png)
+        .item
+          display: inline-block
+          width: #{36 / $font-size + "em"}
+          height: #{36 / $font-size + "em"}
+
+  .sketchpad-landing
+    height: auto
+    .landing-title
+      display: inline-block
+      width: #{(830 / $font-size) + "em"}
+      height: #{(229 / $font-size) + "em"}
+      margin: #{(190 / $font-size) + "em"} auto #{(60 / $font-size) + "em"} auto
+      background:
+        image: url(../img/sketchpad_title.png)
+        position: 50% 50%
+        repeat: no-repeat
+        color: transparent
+      +hide-text()
+      +background-size(100% auto)
+  .sketchpad .sections
+    clear: both
+    &.sketchpad-landing,
+    &.download-app
+      width: 100%
+      margin: 0 auto
+    &.notebook-sketchpad,
+    &.iphone5-sketchpad,
+    &.iphone4-sketchpad,
+    &.ipad-sketchpad,
+    &.nexus5-sketchpad
+      max-width: #{(564 + 770 + 100) / $font-size + "em"}
+      height: #{(550 / $font-size) + "em"}
+      margin: #{(114 / $font-size) + "em"} auto
+      .extends, .description, .links
+        float: left
+      .extends
+        width: #{((700 - 2) / (564 + 770 + 100) * 100) + "%"}
+        max-width: #{(700 - 2) / $font-size + "em"}
+        height: calc(100% - 2px)
+        margin: 1px 1px 1px #{(20 / (564 + 770 + 100) * 100) + "%"}
+      .description, .links
+        width: #{(564 / (564 + 770 + 100) * 100) + "%"}
+        max-width: #{564 / $font-size + "em"}
+        margin-left: #{(80 / (564 + 770 + 100) * 100) + "%"}
+      .links
+        clear: right
+
+  .notebook-sketchpad
+    .extends
+      background-image: url(../img/sketchpad_iphone5-nb.jpg)
+    .description
+      height: #{348 / $font-size + "em"}
+      background-image: url(../img/sketchpad_notebook-spec-large.png)
+
+  .iphone5-sketchpad
+    .extends
+      background-image: url(../img/sketchpad_iphone5.png)
+    .description
+      height: #{356 / $font-size + "em"}
+      background-image: url(../img/sketchpad_iphone5-spec-large.png)
+
+  .iphone4-sketchpad
+    .extends
+      background-image: url(../img/sketchpad_iphone4.png)
+    .description
+      height: #{358 / $font-size + "em"}
+      background-image: url(../img/sketchpad_iphone4-spec-large.png)
+
+  .ipad-sketchpad
+    .extends
+      background-image: url(../img/sketchpad_ipad.png)
+    .description
+      height: #{330 / $font-size + "em"}
+      background-image: url(../img/sketchpad_ipad-spec-large.png)
+
+  .nexus5-sketchpad
+    .extends
+      background-image: url(../img/sketchpad_android.png)
+    .description
+      height: #{365 / $font-size + "em"}
+      background-image: url(../img/sketchpad_nexus5-spec-large.png)
+
+@media(min-width: 93.75em)
+  #container.sketchpad .sections
+    &.download-app
+      +background-size(100% auto)
+
+@media(-webkit-min-device-pixel-ratio: 1.5) and (min-width: 48em)
+  .sketchpad-landing
+    .landing-title
+      background-image: url(../img/sketchpad_title@2x.png)
+
+  .sketchpad
+    .sections
+      > .links
+        .button
+          &.purchance
+            background-image: url(../img/purchace-btn@2x.png)
+          &.free-download
+            background-image: url(../img/free-download-btn@2x.png)
+  .notebook-sketchpad
+    .extends
+      background-image: url(../img/sketchpad_iphone5-nb@2x.jpg)
+    .description
+      background-image: url(../img/sketchpad_notebook-spec-large@2x.png)
+  .iphone5-sketchpad
+    .extends
+      background-image: url(../img/sketchpad_iphone5@2x.png)
+    .description
+      background-image: url(../img/sketchpad_iphone5-spec-large@2x.png)
+  .iphone4-sketchpad
+    .extends
+      background-image: url(../img/sketchpad_iphone4@2x.png)
+    .description
+      background-image: url(../img/sketchpad_iphone4-spec-large@2x.png)
+  .ipad-sketchpad
+    .extends
+      background-image: url(../img/sketchpad_ipad@2x.png)
+    .description
+      background-image: url(../img/sketchpad_ipad-spec-large@2x.png)
+  .nexus5-sketchpad
+    .extends
+      background-image: url(../img/sketchpad_android@2x.png)
+    .description
+      background-image: url(../img/sketchpad_nexus5-spec-large@2x.png)

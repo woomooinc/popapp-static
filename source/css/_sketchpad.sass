@@ -1,0 +1,92 @@
+.sketchpad
+  .sections
+    > .extends
+      width: #{(288 / $font-size) + "em"}
+      height: #{(226 / $font-size) + "em"}
+      margin: #{30 / $font-size + "em"} auto #{(28 / $font-size) + "em"} auto
+    > .links
+      text-align: center
+      margin: #{28 / $font-size + "em"} auto #{(50 / $font-size) + "em"} auto
+      .button
+        display: none
+      .item
+        display: inline-block
+        width: #{48 / $font-size + "em"}
+        height: #{48 / $font-size + "em"}
+        background:
+          position: 0 0
+          repeat: no-repeat
+          color: transparent
+        +hide-text()
+        +background-size(100% auto)
+      @each $item in "facebook" "twitter" "email" "link"
+        .#{$item}
+          background-image: url(../img/m-#{$item}.png)
+          &:hover
+            background-position: 0 100%
+
+.sketchpad-landing
+  height: #{50 / $font-size + "em"}
+  .landing-title
+    display: none
+
+.notebook-sketchpad,
+.iphone5-sketchpad,
+.iphone4-sketchpad,
+.ipad-sketchpad,
+.nexus5-sketchpad
+  .extends
+    width: #{(288 - 2) / $font-size + "em"}
+    width: #{(226 - 2) / $font-size + "em"}
+    margin: 0 auto
+    background:
+      position: 50% 50%
+      repeat: no-repeat
+      color: transparent
+    +hide-text()
+    +background-size(100% auto)
+    +single-box-shadow(#4d4d4d, 0px, 0px, 1px, -1px)
+  .description
+    width: #{310 / $font-size + "em"}
+    margin: 0 auto
+    background:
+      position: 50% 50%
+      repeat: no-repeat
+      color: transparent
+    +hide-text()
+    +background-size(100% auto)
+
+.notebook-sketchpad
+  .extends
+    background-image: url(../img/sketchpad_iphone5-nb-m.jpg)
+  .description
+    height: #{332 / $font-size + "em"}
+    background-image: url(../img/sketchpad_notebook-spec.png)
+
+.iphone5-sketchpad
+  .extends
+    background-image: url(../img/sketchpad_iphone5-m.png)
+  .description
+    height: #{342 / $font-size + "em"}
+    background-image: url(../img/sketchpad_iphone5-spec.png)
+
+.iphone4-sketchpad
+  .extends
+    background-image: url(../img/sketchpad_iphone4-m.png)
+  .description
+    height: #{338 / $font-size + "em"}
+    background-image: url(../img/sketchpad_iphone4-spec.png)
+
+.ipad-sketchpad
+  .extends
+    background-image: url(../img/sketchpad_ipad-m.png)
+  .description
+    height: #{268 / $font-size + "em"}
+    background-image: url(../img/sketchpad_ipad-spec.png)
+
+.nexus5-sketchpad
+  .extends
+    background-image: url(../img/sketchpad_android-m.png)
+  .description
+    height: #{338 / $font-size + "em"}
+    background-image: url(../img/sketchpad_nexus5-spec.png)

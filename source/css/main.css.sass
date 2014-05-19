@@ -1,0 +1,202 @@
+@import compass/css3/box-shadow
+@import compass/css3/opacity
+@import compass/css3/transition
+@import compass/css3/transform
+@import compass/css3/border-radius
+@import compass/css3/background-size
+@import compass/utilities/general/clearfix
+@import compass/utilities/text/replacement
+
+@import base
+
+html, body
+  font-size: #{$font-size + "px"}
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+  line-height: 1.5em
+
+.hide-text
+  +hide-text()
+
+.header
+  position: absolute
+  top: 0px
+  width: 100%
+  height: 3.5714em
+  z-index: 999
+  .logo
+    width: #{(78 / $font-size) + "em"}
+    height: #{(24 / $font-size) + "em"}
+    overflow: hidden
+    display: inline-block
+    float: left
+    margin:
+      top: 1.0714em
+      left: 0.928em
+    background:
+      image: url(../img/pop-m-1.png)
+      position: 50% 50%
+      repeat: no-repeat
+      color: transparent
+    +hide-text()
+    +background-size(100% auto)
+  &.animate-step
+    position: fixed
+    top: -200px
+  &.float
+    position: fixed
+    top: 0px
+    color: #4d4d4d
+    background: rgba(255, 255, 255, 0.85)
+    +single-transition(all)
+    a
+      color: #4d4d4d
+    .logo
+      background-image: url(../img/pop-m-2.png)
+  a
+    color: white
+    text-decoration: none
+
+#navigation
+  .hidden-mobile
+    display: none
+
+#footer
+  text-align: center
+  background: white
+  padding-bottom: #{(26 / $font-size) + "em"}
+
+#container
+  position: relative
+  .sections
+    position: relative
+    width: 100%
+    
+.sections
+  width: 100%
+  height: 100%
+  overflow: hidden
+  text-align: center
+
+.simple-intutive-powerful,
+.work-on-different-platforms,
+.build-and-share-your-app,
+.integrates-into-your-workflow,
+.as-seen-on,
+.reviews
+  background: white
+
+.social-network
+  position: relative
+  text-align: center
+  padding-top: #{26 / $font-size + "em"}
+  .desktop
+    display: none
+  .mobile
+    width: #{35 / $font-size + "em"}
+    height: #{35 / $font-size + "em"}
+    display: inline-block
+    cursor: pointer
+    text-decoration: none
+    background:
+      position: 50% 50%
+      repeat: no-repeat
+      color: white
+    +hide-text()
+    +background-size(100% auto)
+    &.twitter
+      background-image: url(../img/twitter-active.png)
+    &.facebook
+      background-image: url(../img/facebook-active.png)
+
+.woomoo-copyright
+  width: 90%
+  margin: 0 auto
+  padding: 1em 0 0 0
+  display: block
+  color: #999999
+  text-align: center
+  .terms-privacy
+    .item
+      display: inline-block
+      padding: 0 0.25em
+      line-height: 1em
+      letter-spacing: 1px
+      + .item
+        &:before
+          content: "|"
+          padding-right: 0.75em
+  a
+    color: #999999
+    text-decoration: none
+  .woomoo
+    display: inline-block
+    width: #{(200 / $font-size) + "em"}
+    height #{(20 / $font-size) + "em"}
+    margin-top: 1em
+    background:
+      image: url(../img/woomoo.png)
+      position: 50% 50%
+      repeat: no-repeat
+      color: white
+    +hide-text()
+    +background-size(100% auto)
+
+.carousel-navigation
+  position: absolute
+  bottom: #{(90 / $font-size) + "em"}
+  left: calc(50% - #{8px * 5})
+  .item
+    display: inline-block
+    width: 7px
+    height: 7px
+    border: 1px solid white
+    margin: 0 4px 0 0
+    +border-radius(4px)
+    &:first-child, &.active
+      background-color: white
+
+/* POPAPP Homepage */
+@import _landing
+/* Intutive */
+@import _intutive
+/* Make reality */
+@import _make_reality
+/* Build */
+@import _build
+/* Work On */
+@import _work_on
+/* Integrates */
+@import _intergates
+/* As seen on */
+@import _as_seen_on
+/* Reviews */
+@import _reviews
+/* Download POPAPP */
+@import _download_app
+
+
+/* Feature */
+@import _feature_landing
+@import _feature_ssl
+@import _feature_fast_import
+@import _feature_rapid_duplication
+@import _feature_organize
+@import _feature_transitions
+@import _feature_gestures
+@import _feature_dropbox
+@import _feature_share
+@import _feature_coworking
+@import _feature_multi_platform
+.features
+  .scrolling, .iphone-video, .ipad-video, .js-extends
+    position: relative
+    display: none
+
+/* Sketchpad */
+@import _sketchpad
+
+/* Media Queries */
+@import _main_2x
+@import _main_rwd
+@import _feature_rwd
+@import _sketchpad_rwd

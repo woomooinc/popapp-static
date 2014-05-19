@@ -1,0 +1,18 @@
+.work-on-different-platforms
+  height: #{(1000 / $font-size) + "em"}
+  display: block
+  .title
+    width: #{(1190 / $font-size) + "em"}
+    max-width: 90%
+    height: #{(199 / $font-size) + "em"}
+    display: block
+    margin: #{136 / $font-size + "em"} auto #{33 / $font-size + "em"} auto
+    background:
+      image: url(../img/work-on.png)
+      position: 50% 50%
+      repeat: no-repeat
+      color: transparent
+    +hide-text()
+    +background-size(100% auto)
+  .js-extends
+    margin-bottom: #{(120 / $font-size) + "em"}
