@@ -1,7 +1,16 @@
 .ssl-encryption
   height: #{(500 / $font-size) + "em"}
   .lock-icon
+    width: #{(80 / $font-size) + "em"}
+    height: #{(90 / $font-size) + "em"}
     margin: #{(142 / $font-size) + "em"} auto #{(42 / $font-size) + "em"} auto
+    background:
+      image: url(../img/feature_security.png)
+      position: 50% 50%
+      repeat: no-repeat
+      color: transparent
+    +hide-text()
+    +background-size(100% auto)
   .description
     width: #{(306 / $font-size) + "em"}
     max-width: 320px

@@ -15,6 +15,8 @@
       width: #{(86 / $font-size) + "em"}
       height: #{(34 / $font-size) + "em"}
       background-image: url(../img/pop-2.png)
+  .mobile-navigation-bar, #mobile-menu
+    display: none
   #navigation
     display: inline-block
     float: right
@@ -47,18 +49,27 @@
           a
             color: white
       &.countries
+        position: relative
         width: 2em
         height: auto
         margin:
           right: 0em
           top: -0.7em
+        &:hover
+          .country
+            +opacity(0.3)
+          .active
+            +opacity(1)
       &.country
-        position: relative
+        position: absolute
+        top: 0
+        left: 0
         width: 100%
         height: 2em
         display: block
         overflow: hidden
-        +opacity(0.3)
+        +opacity(0)
+        +single-transition(all)
         &.active
           +opacity(1)
     @each $country in "us" "tw" "jp"
@@ -68,6 +79,11 @@
           position: 50% 50%
           repeat: no-repeat
           color: transparent
+        a
+          display: inline-block
+          cursor: pointer
+          width: 100%
+          height: 100%
   #footer
     height: #{(190 / $font-size) + "em"}
   .social-network

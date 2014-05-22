@@ -23,6 +23,7 @@ html, body
   width: 100%
   height: 3.5714em
   z-index: 999
+  +single-transition(all)
   .logo
     width: #{(78 / $font-size) + "em"}
     height: #{(24 / $font-size) + "em"}
@@ -52,6 +53,10 @@ html, body
       color: #4d4d4d
     .logo
       background-image: url(../img/pop-m-2.png)
+    .mobile-navigation-bar .bar
+      background: #03b2a1
+      &:after, &:before
+        background: #03b2a1
   a
     color: white
     text-decoration: none
@@ -60,17 +65,113 @@ html, body
   .hidden-mobile
     display: none
 
+.mobile-navigation-bar
+  float: right
+  position: relative
+  overflow: hidden
+  .bar
+    position: relative
+    width: 2em
+    height: 2px
+    background: white
+    margin: 2em 1.5em
+    &:after, &:before
+      position: absolute
+      content: ""
+      display: block
+      width: 100%
+      height: 2px
+      background: white
+    &:after
+      bottom: -0.6em
+    &:before
+      top: -0.6em
+
 #footer
   text-align: center
   background: white
   padding-bottom: #{(26 / $font-size) + "em"}
+  +single-transition(all)
 
 #container
   position: relative
+  margin: 0 auto
+  background: white
+  +single-transition(all)
   .sections
     position: relative
     width: 100%
-    
+
+#mobile-menu
+  position: fixed
+  background: #333333
+  height: 100%
+  top: 0
+  width: calc(100% - 100px)
+  margin-left: 100%
+  overflow: hidden
+  +single-transition(all)
+  .close
+    position: relative
+    float: right
+    width: #{(36 / $font-size) + "em"}
+    height: #{(36 / $font-size) + "em"}
+    margin: #{(12 / $font-size) + "em"} #{(12 / $font-size) + "em"} #{(78 - 12 - 36 - 20) / $font-size + "em"} 0
+    overflow: hidden
+    +hide-text()
+    +transform(rotateZ(45deg))
+    &:after, &:before
+      position: absolute
+      content: ""
+      display: block
+      background: white
+    &:before
+      top: 0px
+      left: #{(36 / $font-size) / 2 + "em"}
+      width: 2px
+      height: 100%
+    &:after
+      left: 0px
+      top: #{(36 / $font-size) / 2 + "em"}
+      width: 100%
+      height: 2px
+  .mobile-navigation
+    clear: both
+    text-align: center
+    margin: 0 2em
+    .item
+      padding: #{(20 / $font-size) + "em"} 0
+      a
+        color: white
+        text-decoration: none
+        &:hover, &.active
+          color: #03b2a1
+      &.countries
+        color: #666666
+    .item + .item
+      border-top: 1px solid #666666
+    ul.countries
+      margin-top: #{(16 / $font-size) + "em"}
+      .country
+        display: inline-block
+        width: 2.5em
+        height: 2.5em
+        +opacity(0.3)
+        &:hover, &.active
+          +opacity(1)
+      @each $country in "us" "tw" "jp"
+        .#{$country}
+          background:
+            image: url(../img/language-#{$country}.png)
+            position: 50% 50%
+            repeat: no-repeat
+            color: transparent
+          a
+            display: inline-block
+            cursor: pointer
+            width: 100%
+            height: 100%
+
 .sections
   width: 100%
   height: 100%
