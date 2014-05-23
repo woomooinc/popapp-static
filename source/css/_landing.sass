@@ -2,6 +2,8 @@
   background: url(../img/bg-landing.jpg) 50% 50% no-repeat transparent
   +background-size(auto 100%)
   .landing-title
+    position: relative
+    z-index: 10
     width: #{(326 / $font-size) + "em"}
     max-width: 100%
     height: #{(182 / $font-size) + "em"}
@@ -15,9 +17,13 @@
     +hide-text()
     +background-size(100% auto)
   .download-from-store
+    position: relative
+    z-index: 10
     display: none
   .download-app,
   .watch-video
+    position: relative
+    z-index: 10
     width: 11.928em
     height: 3.3571em
     display: block
@@ -38,8 +44,31 @@
     height: #{(48 / $font-size) + "em"}
     margin-bottom: 11.146em
     background-image: url(../img/btn-watch-m.png)
+  .mask
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background: rgba(0, 0, 0, 0.25)
+    z-index: 2
   .bg-landing
     position: absolute
-  .bg-landing-skechpad
+    z-index: 1
+  .bg-landing-skechpad,
+  .bg-landing-notebook,
   .bg-landing-nbl
+    background:
+      position: 50% 50%
+      repeat: no-repeat
+      color: transparent
+    +single-transition(all)
+  .bg-landing-skechpad
+    width: #{592 / $font-size + "em"}
+    height: #{552 / $font-size + "em"}
+    background-image: url(../img/bg-landing-skechpad.png)
+    left: calc(50% - #{(592 / 2) + "px"})
   .bg-landing-notebook
+    top: #{728 / $font-size * -1 + "em"}
+  .bg-landing-nbl
+    bottom: #{476 / $font-size * -1 + "em"}

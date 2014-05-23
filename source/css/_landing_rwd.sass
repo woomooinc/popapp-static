@@ -1,13 +1,6 @@
 .popapp-landing
   height: #{1000 / $font-size + "em"}
-  .mask
-    position: absolute
-    top: 0
-    left: 0
-    right: 0
-    bottom: 0
-    background: rgba(0, 0, 0, 0.25)
-    z-index: 0
+  min-height: #{(800 / $font-size) + "em"}
   .landing-title
     position: relative
     width: #{(860 / $font-size) + "em"}
@@ -28,3 +21,18 @@
     height: #{(102 / $font-size) + "em"}
     margin: #{(42 / $font-size) + "em"}  auto #{(70 / $font-size) + "em"} auto
     background-image: url(../img/play-video.png)
+  .bg-landing-notebook
+    width: #{598 / $font-size + "em"}
+    height: #{728 / $font-size + "em"}
+    background-image: url(../img/bg-landing-mac.png)
+    top: -28%
+    right: -15%
+  .bg-landing-nbl
+    width: #{599 / $font-size + "em"}
+    height: #{476 / $font-size + "em"}
+    background-image: url(../img/bg-landing-nbl.png)
+    bottom: 0
+    right: 6%
+  .bg-landing-skechpad
+    bottom: 10%
+    left: 1%

@@ -60,9 +60,9 @@
         for (var i = 0; i < list.length; i++) {
             if (list[i].nodeName.toLowerCase() === 'li') {
                 if (list[i].classList.contains('active')) {
-                    list[i].style.top = '0px';
+                    list[i].style.top = '4px';
                 } else {
-                    list[i].style.top = (k * 2)+'em';
+                    list[i].style.top = (k * 3)+'em';
                 }
                 k++;
             }
@@ -73,7 +73,7 @@
         var list = countries.children[0].childNodes;
         for (var i = 0; i < list.length; i++) {
             if (list[i].nodeName.toLowerCase() === 'li') {
-                list[i].style.top = '0px';
+                list[i].style.top = '4px';
             }
         }
     }, false);
@@ -82,7 +82,7 @@
         var list = countries.children[0].childNodes;
         for (var i = 0; i < list.length; i++) {
             if (list[i].nodeName.toLowerCase() === 'li') {
-                list[i].style.top = '0px';
+                list[i].style.top = '4px';
             }
         }
     }, false);

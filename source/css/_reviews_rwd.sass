@@ -27,22 +27,22 @@
       float: left
       height: #{(50 / $font-size) + "em"}
       margin-top: #{((65 - 50) / 2) / $font-size + "em"}
-    $ur-title: 212 239 146
-    $ur-desc-w: 347 363 362
-    $ur-desc-h: 124 141 141
-    $i: 1
-    @each $ur in "jason-fried" "phill-ryu" "steve-chen"
-      .#{$ur}
-        .description
-          width: #{(nth($ur-desc-w, $i) / $font-size) + "em"}
-          height: #{(nth($ur-desc-h, $i) / $font-size) + "em"}
-          background-image: url(../img/desc-#{$ur}-large.png)
-        .icon
-          background-image: url(../img/icon-#{$ur}.png)
-        .title
-          background-image: url(../img/title-#{$ur}-large.png)
-          width: #{(nth($ur-title, $i) / $font-size) + "em"}
-      $i: $i + 1
+  $ur-title: 212 239 146
+  $ur-desc-w: 347 363 362
+  $ur-desc-h: 124 141 141
+  $i: 1
+  @each $ur in "jason-fried" "phill-ryu" "steve-chen"
+    .#{$ur}
+      .description
+        width: #{(nth($ur-desc-w, $i) / $font-size) + "em"}
+        height: #{(nth($ur-desc-h, $i) / $font-size) + "em"}
+        background-image: url(../img/desc-#{$ur}-large.png)
+      .icon
+        background-image: url(../img/icon-#{$ur}.png)
+      .title
+        background-image: url(../img/title-#{$ur}-large.png)
+        width: #{(nth($ur-title, $i) / $font-size) + "em"}
+    $i: $i + 1
   .quote
   .carousel-navigation
     display: none

@@ -1,2 +1,12 @@
 .reviews
-  .quote
+  @each $ur in "jason-fried" "phill-ryu" "steve-chen"
+    .#{$ur}
+      .description
+        background-image: url(../img/desc-#{$ur}-large@2x.png)
+      .icon
+        background-image: url(../img/icon-#{$ur}@2x.png)
+      .title
+        background-image: url(../img/title-#{$ur}-large@2x.png)
+  .prev-review,
+  .next-review
+    background-image: url(../img/arrow@2x.png)
