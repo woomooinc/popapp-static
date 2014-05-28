@@ -17,6 +17,7 @@
       .logo
         width: #{(86 / $font-size) + "em"}
         height: #{(34 / $font-size) + "em"}
+        margin-top: #{(4 / $font-size) + "em"}
         background-image: url(../img/pop-2.png)
   .mobile-navigation-bar, #mobile-menu
     display: none
@@ -65,12 +66,13 @@
         position: absolute
         top: 4px
         left: 0
-        width: 100%
+        width: 2.5em
         height: 2.5em
         display: block
         overflow: hidden
         +opacity(0)
         +single-transition(all)
+        +border-radius(2em)
         &.active
           +opacity(1)
     @each $country in "us" "tw" "jp"
@@ -80,6 +82,7 @@
           position: 50% 50%
           repeat: no-repeat
           color: transparent
+        +background-size(auto 100%)
         a
           display: inline-block
           cursor: pointer
@@ -193,13 +196,26 @@
       bottom: -8%
       left: calc(50% - #{(592 / 2) + "px"})
 
+@media(min-width: 69.5em)
+  .reviews
+    .carousel
+      max-width: #{(345 + 40) / $font-size * 3 + "em"}
+
 @media(-webkit-min-device-pixel-ratio: 1.5) and (min-width: 48em)
   .header
     .logo
       background-image: url(../img/pop-1@2x.png)
     &.float .logo
       background-image: url(../img/pop-2@2x.png)
-
+  #navigation
+    @each $country in "us" "tw" "jp"
+      .#{$country}
+        background-image: url(../img/language-#{$country}@2x.png)
+  .download-from-store
+    .download-ios
+      background-image: url(../img/app-store@2x.png)
+    .download-android
+      background-image: url(../img/google-play-btn@2x.png)
   /* RWD, POPAPP landing */
   @import _landing_rwd_2x
 

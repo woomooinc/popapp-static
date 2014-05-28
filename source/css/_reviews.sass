@@ -14,9 +14,21 @@
     position: relative
     top: 0
     left: 0
-    width: 100% * 4
-    height: #{((260 + 42 + 78 + 25) / $font-size) + "em"}
+    max-width: 100%
+    margin: 0 auto
     overflow: hidden
+    &:hover
+      .flex-next,
+      .flex-prev
+        +opacity(1)
+      .flex-next
+        right: 10px
+      .flex-prev
+        left: 10px
+    .flex-control-nav
+      bottom: 10px
+    .slides
+      min-height: #{((260 + 42 + 78 + 25) / $font-size) + "em"}
     .item
       width: #{(100 / 4) + "%"}
       height: 100%
@@ -44,16 +56,6 @@
         bottom: #{(12 / $font-size) + "em"}
     .title
       height: #{(41 / $font-size) + "em"}
-  .carousel-navigation
-    position: relative
-    display: inline-block
-    bottom: 0
-    left: 0
-    margin: 0 auto #{(68 / $font-size) + "em"} auto
-    .item
-      border: 1px solid #03b2a1
-      &:first-child, &.active
-        background-color: #03b2a1
   $ur-title: 204 238 150
   $ur-desc-w: 298 324 352
   $ur-desc-h: 98 106 106
@@ -70,5 +72,15 @@
         background-image: url(../img/title-#{$ur}.png)
         width: #{(nth($ur-title, $i) / $font-size) + "em"}
     $i: $i + 1
-  .buttons
-    display: none
+  .flex-next,
+  .flex-prev
+    background:
+      image: url(../img/arrow.png)
+      position: 0 0
+      repeat: no-repeat
+      color: rgba(255, 255, 255, 0.8)
+    +border-radius(20px)
+    +hide-text()
+    +background-size(100% auto)
+  .flex-prev
+    +transform(rotateZ(180deg))

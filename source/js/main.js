@@ -2,8 +2,22 @@
     var carousel = document.getElementById('make-anyones-app-a-reality');
 
     if (carousel && carousel.style) {
-        carousel.style.height = (window.innerHeight > 480 ? (window.innerHeight >= 900 ? 900 : window.innerHeight) : 480) + 'px';
+        carousel.style.height = (window.innerHeight > 480 ? (window.innerHeight >= 800 ? 800 : window.innerHeight) : 480) + 'px';
     }
+
+    var simple = document.getElementById('simple-intutive-powerful');
+    var simple_extends = document.getElementById('simple-intutive-extends');
+
+    simple.style.height = simple_extends.offsetTop + 618/* 618px */ + 'px';
+
+    var header = document.getElementById('header'),
+        container = document.getElementById('container'),
+        footer = document.getElementById('footer'),
+        menu = document.getElementById('mobile-menu');
+
+    header.style.marginLeft = '0px';
+    container.style.marginLeft = '0px';
+    footer.style.marginLeft = '0px';
 
     var slidemenu = document.getElementById('slidemenu');
     slidemenu.addEventListener('click', function(event) {
@@ -13,6 +27,9 @@
             container = document.getElementById('container'),
             footer = document.getElementById('footer'),
             menu = document.getElementById('mobile-menu');
+            header.style.marginLeft = '0px';
+            container.style.marginLeft = '0px';
+            footer.style.marginLeft = '0px';
 
         if (menu.classList.contains('active')) {
             header.style.width = '100%';
@@ -25,10 +42,11 @@
             menu.className = '';
         } else {
             header.style.width = window.innerWidth+'px';
-            header.style.marginLeft = 100 - window.innerWidth + 'px';
             container.style.width = window.innerWidth+'px';
-            container.style.marginLeft = 100 - window.innerWidth + 'px';
             footer.style.width = window.innerWidth+'px';
+
+            header.style.marginLeft = 100 - window.innerWidth + 'px';
+            container.style.marginLeft = 100 - window.innerWidth + 'px';
             footer.style.marginLeft = 100 - window.innerWidth + 'px';
             menu.style.marginLeft = '100px';
             menu.className = 'active';
@@ -86,7 +104,13 @@
             }
         }
     }, false);
-    
+
+    $('#review-carousel').flexslider({
+        animation: "slide",
+        itemWidth: 345,
+        itemMargin: 60
+    });
+
     var header = document.getElementById('header');
     var mainHeaderTrigger = document.getElementById('popapp-landing');
     var featureHeaderTrigger = document.getElementById('feature-landing');

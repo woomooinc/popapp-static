@@ -1,4 +1,8 @@
 .make-anyones-app-a-reality
-  .carousel .first-child
-    > .description
-      background-image: url(../img/reality@2x.png)
+  .carousel
+    .first-child
+      > .description
+        background-image: url(../img/reality@2x.png)
+    @each $item in "entrepreneurs" "ad-agencies" "designers" "students"
+      .#{$item}
+        background-image: url(../img/#{$item}@2x.png)
