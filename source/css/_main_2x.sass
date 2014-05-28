@@ -17,9 +17,12 @@
     .learn-more
       background-image: url(../img/learn-more-m@2x.png)
   .make-anyones-app-a-reality
-    @each $item in "entrepreneurs" "ad-agencies" "designers" "students"
-      .#{$item}
-        background-image: url(../img/#{$item}@2x.png)
+    .carousel
+      .first-child > .description
+        background-image: url(../img/popCan@2x.png)
+      @each $item in "entrepreneurs" "ad-agencies" "designers" "students"
+        .#{$item}
+          background-image: url(../img/#{$item}@2x.png)
   .integrates-into-your-workflow
     .intergrate
       background-image: url(../img/intergrate@2x.png)

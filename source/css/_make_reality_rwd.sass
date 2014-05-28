@@ -1,9 +1,13 @@
 .make-anyones-app-a-reality
-  height: #{900 / $font-size + "em"}
+  min-height: #{900 / $font-size + "em"}
   +background-size(auto 100%)
   .carousel
     width: 100%
     text-align: center
+    &.mobile
+      display: none
+    &.desktop
+      display: block
     .item
       display: inline-block
       height: auto
@@ -24,8 +28,8 @@
         +background-size(100% auto)
     @each $item in "entrepreneurs" "ad-agencies" "designers" "students"
       .#{$item}
-        width: #{(234 / $font-size) + "em"}
+        width: #{(314 / $font-size) + "em"}
         height: #{(248 / $font-size) + "em"}
         margin-top: #{(44 / $font-size) + "em"}
-  .carousel-navigation
-    display: none
+    .float-breakflow
+      display: none

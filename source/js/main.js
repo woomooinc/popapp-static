@@ -5,10 +5,14 @@
         carousel.style.height = (window.innerHeight > 480 ? (window.innerHeight >= 800 ? 800 : window.innerHeight) : 480) + 'px';
     }
 
-    var simple = document.getElementById('simple-intutive-powerful');
-    var simple_extends = document.getElementById('simple-intutive-extends');
+    window.addEventListener('resize', function(event) {
+        event.preventDefault();
+        
+        var simple = document.getElementById('simple-intutive-powerful');
+        var simple_extends = document.getElementById('simple-intutive-extends');
 
-    simple.style.height = simple_extends.offsetTop + 618/* 618px */ + 'px';
+        simple.style.height = parseInt(simple_extends.offsetTop, 10) + parseInt(window.getComputedStyle(simple_extends).height, 10)/* 618px */ + 'px';
+    }, false);
 
     var header = document.getElementById('header'),
         container = document.getElementById('container'),
@@ -107,9 +111,17 @@
 
     $('#review-carousel').flexslider({
         animation: "slide",
+        directionNav: window.isMobile ? false : true,
         itemWidth: 345,
-        itemMargin: 60
+        itemMargin: 0
     });
+    $('#reality-carousel').flexslider({
+        animation: "slide",
+        directionNav: window.isMobile ? false : true,
+        itemWidth: 314,
+        itemMargin: 0
+    });
+
 
     var header = document.getElementById('header');
     var mainHeaderTrigger = document.getElementById('popapp-landing');

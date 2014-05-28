@@ -166,6 +166,21 @@
     .bg-landing-skechpad
       left: -6%
 
+@media(min-width: 48em) and (max-width: 60.5em)
+  .make-anyones-app-a-reality
+    .carousel
+      .first-child
+        > .description
+          margin: #{((254 - 16 * 8) / $font-size) + "em"} auto 0 auto
+      @each $item in "entrepreneurs" "ad-agencies"
+        .#{$item}
+          margin-top: #{(44 / $font-size) + "em"}
+      @each $item in "designers" "students"
+        .#{$item}
+          margin-top: #{(22 / $font-size) + "em"}
+      .float-breakflow
+        display: block
+
 @media(max-width: 58.5em)
   .popapp-landing
     .bg-landing-notebook

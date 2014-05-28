@@ -43,3 +43,34 @@
         background-image: url(../img/title-#{$ur}-large.png)
         width: #{(nth($ur-title, $i) / $font-size) + "em"}
     $i: $i + 1
+  .quote
+  .buttons
+    display: none
+    position: absolute
+    top: 0
+    left: calc((100% - (100% - #{(50 * 2 / $font-size) + "em"})) / 2)
+    height: 100%
+    width: calc(100% - #{(50 * 2 / $font-size) + "em"})
+    max-width: #{(345 / $font-size * 3 + 1) + "em"}
+  .prev-review,
+  .next-review
+    position: absolute
+    top: calc(50% - #{(44 / $font-size) + "em"})
+    width: #{(44 / $font-size) + "em"}
+    height: #{(44 / $font-size) + "em"}
+    border: 0 none
+    padding: 0
+    display: inline-block
+    cursor: pointer
+    background:
+      image: url(../img/arrow.png)
+      position: 0 0
+      repeat: no-repeat
+      color: transparent
+    +hide-text()
+    +background-size(100% auto)
+  .prev-review
+    left: 0
+    +transform(rotateZ(180deg))
+  .next-review
+    right: 0

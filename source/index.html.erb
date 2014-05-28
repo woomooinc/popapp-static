@@ -37,21 +37,26 @@ title: POPAPP
     </section>
     <section class="sections make-anyones-app-a-reality" id="make-anyones-app-a-reality">
         <div class="mask"></div>
-        <ul class="carousel">
+        <div class="carousel mobile" id="reality-carousel">
+            <ul class="slides">
+                <li class="item first-child">
+                    <p class="description"></p>
+                </li>
+                <li class="item entrepreneurs"></li>
+                <li class="item ad-agencies"></li>
+                <li class="item designers"></li>
+                <li class="item students"></li>
+            </ul>
+        </div>
+        <ul class="carousel desktop">
             <li class="item first-child">
                 <p class="description"></p>
             </li>
             <li class="item entrepreneurs"></li>
             <li class="item ad-agencies"></li>
+            <br class="float-breakflow">
             <li class="item designers"></li>
             <li class="item students"></li>
-        </ul>
-        <ul class="carousel-navigation">
-            <li class="item"></li>
-            <li class="item"></li>
-            <li class="item"></li>
-            <li class="item"></li>
-            <li class="item"></li>
         </ul>
     </section>
     <section class="sections work-on-different-platforms">
@@ -82,6 +87,10 @@ title: POPAPP
         </ul>
     </section>
     <section class="sections reviews">
+        <div class="buttons">
+            <button type="button" id="prev-review" class="prev-review">Prev</button>
+            <button type="button" id="next-review" class="next-review">Next</button>
+        </div>
         <div class="carousel" id="review-carousel">
             <ul class="slides">
                 <li class="item jason-fried">
