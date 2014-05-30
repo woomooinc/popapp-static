@@ -8,7 +8,7 @@
     max-width: 100%
     height: #{(182 / $font-size) + "em"}
     display: block
-    margin: #{(90 - 19) / $font-size + "em"} auto #{(34 - 28) / $font-size + "em"} auto
+    margin: #{(90 - 19 + 3 * $font-size) / $font-size + "em"} auto #{(34 - 28) / $font-size + "em"} auto
     background:
       image: url(../img/landing-title-m.png)
       position: 50% 50%
@@ -50,7 +50,7 @@
     left: 0
     right: 0
     bottom: 0
-    background: rgba(0, 0, 0, 0.25)
+    background: rgba(0, 0, 0, 0.15)
     z-index: 2
   .bg-landing
     position: absolute
@@ -68,6 +68,7 @@
     height: #{552 / $font-size + "em"}
     background-image: url(../img/bg-landing-skechpad.png)
     left: calc(50% - #{(592 / 2) + "px"})
+    +background-size(53% auto)
   .bg-landing-notebook
     top: #{728 / $font-size * -1 + "em"}
   .bg-landing-nbl

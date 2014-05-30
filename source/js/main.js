@@ -1,4 +1,29 @@
 (function() {
+    var landingResize = function() {
+        var landing = document.getElementById('popapp-landing');
+
+        if (window.innerHeight <= 750 || window.innerHeight >= 1000) {
+
+        } else {
+            landing.style.height = window.innerHeight + 'px';
+
+            var landing_title = document.getElementById('landing--title');
+            var landing_watch_video = document.getElementById('landing--watch-video');
+            var landing_download_app = document.getElementById('landing--download-app');
+            var landing_social_network = document.getElementById('landing--social-network');
+
+            var landing_content_height = parseInt(window.getComputedStyle(landing_title).height, 10) + 
+            parseInt(window.getComputedStyle(landing_title).marginBottom, 10) +
+            parseInt(window.getComputedStyle(landing_watch_video).height, 10) +
+            parseInt(window.getComputedStyle(landing_watch_video).marginBottom, 10) +
+            parseInt(window.getComputedStyle(landing_download_app).height, 10) +
+            parseInt(window.getComputedStyle(landing_download_app).marginBottom, 10) +
+            parseInt(window.getComputedStyle(landing_social_network).height, 10);
+
+            landing_title.style.marginTop = (window.innerHeight - landing_content_height) / 2 + 'px';
+        }
+    };
+
     var carousel = document.getElementById('make-anyones-app-a-reality');
 
     if (carousel && carousel.style) {
@@ -12,6 +37,8 @@
         var simple_extends = document.getElementById('simple-intutive-extends');
 
         simple.style.height = parseInt(simple_extends.offsetTop, 10) + parseInt(window.getComputedStyle(simple_extends).height, 10)/* 618px */ + 'px';
+
+        landingResize();
     }, false);
 
     var header = document.getElementById('header'),
@@ -82,9 +109,9 @@
         for (var i = 0; i < list.length; i++) {
             if (list[i].nodeName.toLowerCase() === 'li') {
                 if (list[i].classList.contains('active')) {
-                    list[i].style.top = '4px';
+                    list[i].style.top = '9px';
                 } else {
-                    list[i].style.top = (k * 3)+'em';
+                    list[i].style.top = (k * 3 * 14 - (8 * k - 1) + 8) + 'px';
                 }
                 k++;
             }
@@ -95,7 +122,7 @@
         var list = countries.children[0].childNodes;
         for (var i = 0; i < list.length; i++) {
             if (list[i].nodeName.toLowerCase() === 'li') {
-                list[i].style.top = '4px';
+                list[i].style.top = '9px';
             }
         }
     }, false);
@@ -104,7 +131,7 @@
         var list = countries.children[0].childNodes;
         for (var i = 0; i < list.length; i++) {
             if (list[i].nodeName.toLowerCase() === 'li') {
-                list[i].style.top = '4px';
+                list[i].style.top = '9px';
             }
         }
     }, false);
@@ -181,4 +208,6 @@
             }
         }
     }, false);
+
+    landingResize();
 })();

@@ -1,5 +1,6 @@
 .work-on-different-platforms
   height: #{(1000 / $font-size) + "em"}
+  max-height: #{(1000 / $font-size) + "em"}
   display: block
   .title
     width: #{(900 / $font-size) + "em"}
@@ -15,4 +16,7 @@
     +hide-text()
     +background-size(100% auto)
   .js-extends
-    margin-bottom: #{(120 / $font-size) + "em"}
+    width: 80%
+    max-width: #{(1300 / $font-size) + "em"}
+    padding: 0
+    margin: 0 auto #{(120 / $font-size) + "em"} auto

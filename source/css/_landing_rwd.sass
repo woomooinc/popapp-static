@@ -1,6 +1,7 @@
 .popapp-landing
   height: #{1000 / $font-size + "em"}
   min-height: #{(800 / $font-size) + "em"}
+  +background-size(100% auto)
   .landing-title
     position: relative
     width: #{(860 / $font-size) + "em"}
@@ -28,11 +29,12 @@
     top: -28%
     right: -15%
   .bg-landing-nbl
-    width: #{599 / $font-size + "em"}
-    height: #{476 / $font-size + "em"}
+    width: #{749 / $font-size + "em"}
+    height: #{595 / $font-size + "em"}
     background-image: url(../img/bg-landing-nbl.png)
-    bottom: 0
-    right: 6%
+    bottom: -1%
+    right: 0%
   .bg-landing-skechpad
-    bottom: 10%
+    +background-size(100% auto)
+    bottom: 8%
     left: 1%

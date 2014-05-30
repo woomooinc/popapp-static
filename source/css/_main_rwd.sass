@@ -40,6 +40,7 @@
         margin: 0 0.22em
         padding: 0.22em 0.66em
         border: 2px solid transparent
+        letter-spacing: 1px
         &.active
           border-color: #38ffec
           color: #38ffec
@@ -57,6 +58,7 @@
         margin:
           right: 0em
           top: -0.7em
+          left: 0.8em
         &:hover
           .country
             +opacity(0.3)
@@ -64,10 +66,10 @@
             +opacity(1)
       &.country
         position: absolute
-        top: 4px
+        top: 9px
         left: 0
-        width: 2.5em
-        height: 2.5em
+        width: 2em
+        height: 2em
         display: block
         overflow: hidden
         +opacity(0)
@@ -88,6 +90,18 @@
           cursor: pointer
           width: 100%
           height: 100%
+  .header.float #navigation
+    ul li
+      &.nav
+        &.active
+          border-color: #03b2a1
+          color: #03b2a1
+          a
+            color: #03b2a1
+        &.login:hover
+          background-color: #03b2a1
+          a
+            color: white
   #footer
     height: #{(190 / $font-size) + "em"}
   .social-network
@@ -166,6 +180,14 @@
     .bg-landing-skechpad
       left: -6%
 
+@media(min-width: 34.37em)
+  .build-and-share-your-app
+    .js-extends
+      width: 100%
+      max-width: 90%
+      +background-size(100% auto)
+
+
 @media(min-width: 48em) and (max-width: 60.5em)
   .make-anyones-app-a-reality
     .carousel
@@ -180,6 +202,11 @@
           margin-top: #{(22 / $font-size) + "em"}
       .float-breakflow
         display: block
+
+@media(max-height: 57.25em)
+  .popapp-landing
+    .bg-landing-nbl
+      bottom: -25%
 
 @media(max-width: 58.5em)
   .popapp-landing
@@ -208,8 +235,8 @@
     .bg-landing-nbl
       bottom: #{476 / $font-size * -1 + "em"}
     .bg-landing-skechpad
-      bottom: -8%
-      left: calc(50% - #{(592 / 2) + "px"})
+      bottom: -23%
+      left: calc(53% - #{(592 / 2) + "px"})
 
 @media(min-width: 69.5em)
   .reviews

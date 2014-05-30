@@ -26,7 +26,11 @@
     +hide-text()
     +background-size(100% auto)
   .js-extends
-    background: url(../img/2-landingPage.png) 35% 100% no-repeat transparent
-    height: #{(1000 - 198 - 98 - 30 - 18 - 38) / $font-size * 0.5 + "em"}
+    background: 
+      image: url(../img/cross-platform-m.png)
+      position: 85% 100%
+      repeat: no-repeat
+      color: transparent
+    height: #{(1000 - 198 - 98 - 30 - 18 - 42 - 5 * $font-size) / $font-size * 0.5 + "em"}
     +background-size(auto 100%)
     margin-bottom: #{(43 / $font-size) + "em"}

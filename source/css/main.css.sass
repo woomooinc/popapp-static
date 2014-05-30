@@ -17,6 +17,10 @@ html, body
 .hide-text
   +hide-text()
 
+.edgeLoad-EDGE-16923691,
+.edgeLoad-EDGE-99759421
+  visibility: hidden
+
 .header
   position: absolute
   top: 0px
@@ -31,7 +35,7 @@ html, body
     display: inline-block
     float: left
     margin:
-      top: 1.0714em
+      top: #{(14 / $font-size) + "em"}
       left: 0.928em
     background:
       image: url(../img/pop-m-1.png)
@@ -75,7 +79,7 @@ html, body
     width: 2em
     height: 2px
     background: white
-    margin: 2em 1.5em
+    margin: 1.8em 1.5em
     &:after, &:before
       position: absolute
       content: ""
@@ -294,6 +298,7 @@ html, body
 @import _feature_ssl
 @import _feature_fast_import
 @import _feature_rapid_duplication
+@import _feature_scrolling
 @import _feature_organize
 @import _feature_transitions
 @import _feature_gestures
