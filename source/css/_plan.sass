@@ -1,0 +1,50 @@
+.container.plan
+  .plan-landing
+    overflow: hidden
+    .landing-title
+      width: 100%
+      max-width: #{320 / $font-size + "em"}
+      height: #{420 / $font-size + "em"}
+      background:
+        image: url(../img/plan-pic-1-m.png)
+        repeat: no-repeat
+        position: 50% 50%
+        color: transparent
+      margin: #{(90 - 19 - $font-size) / $font-size + "em"} auto 2em auto
+      +hide-text()
+      +background-size(100% auto)
+  .plan-make-it-real
+    .title
+      width: 100%
+      max-width: #{304 / $font-size + "em"}
+      height: #{142 / $font-size + "em"}
+      margin: 1em auto
+      background:
+        image: url(../img/plan-words-m.png)
+        repeat: no-repeat
+        position: 50% 50%
+        color: transparent
+      +hide-text()
+      +background-size(100% auto)
+  .download-app
+    height: auto
+    max-height: #{410 / $font-size + "em"}
+    background-color: white
+    .title
+      width: 100%
+      max-width: #{830 / $font-size + "em"}
+      height: #{240 / $font-size + "em"}
+      background:
+        image: url(../img/plan-words.png)
+        repeat: no-repeat
+        position: 50% 50%
+        color: transparent
+      +hide-text()
+      +background-size(100% auto)
+
+@media(-webkit-min-device-pixel-ratio: 1.5)
+  .container.plan
+    .plan-landing .landing-title
+      background-image: url(../img/plan-pic-1-m@2x.png)
+    .plan-make-it-real .title
+      background-image: url(../img/plan-words-m@2x.png)

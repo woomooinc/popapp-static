@@ -1,0 +1,32 @@
+@media(min-width: 48em)
+  .container.plan
+    .plan-landing
+      .landing-title
+        max-width: #{512 / $font-size + "em"}
+        height: #{672 / $font-size + "em"}
+        background-image: url(../img/plan-pic-1.png)
+        margin: #{(90 - 19 + 3 * $font-size) / $font-size + "em"} auto 2em auto
+    .plan-make-it-real
+      display: none
+    .download-app
+      height: auto
+      background-image: url(../img/bg-plan.png)
+      max-height: #{450 / $font-size + "em"}
+      .title
+        width: 100%
+        max-width: #{830 / $font-size + "em"}
+        height: #{240 / $font-size + "em"}
+        background:
+          image: url(../img/plan-words.png)
+          repeat: no-repeat
+          position: 50% 50%
+          color: transparent
+        +hide-text()
+        +background-size(100% auto)
+
+@media(-webkit-min-device-pixel-ratio: 1.5) and (min-width: 48em)
+  .container.plan
+    .plan-landing .landing-title
+      background-image: url(../img/plan-pic-1@2x.png)
+    .download-app .title
+      background-image: url(../img/plan-words@2x.png)
