@@ -2,8 +2,8 @@
     var landingResize = function() {
         var landing = document.getElementById('popapp-landing');
 
-        if (window.innerHeight <= 750 || window.innerHeight >= 1000) {
-
+        if (window.innerHeight <= 650) {
+            landing_title.style.marginTop = '10px';
         } else {
             landing.style.height = window.innerHeight + 'px';
 
