@@ -12,7 +12,7 @@
             var landing_download_app = document.getElementById('landing--download-app');
             var landing_social_network = document.getElementById('landing--social-network');
 
-            var landing_content_height = parseInt(window.getComputedStyle(landing_title).height, 10) + 
+            var landing_content_height = parseInt(window.getComputedStyle(landing_title).height, 10) +
             parseInt(window.getComputedStyle(landing_title).marginBottom, 10) +
             parseInt(window.getComputedStyle(landing_watch_video).height, 10) +
             parseInt(window.getComputedStyle(landing_watch_video).marginBottom, 10) +
@@ -21,6 +21,14 @@
             parseInt(window.getComputedStyle(landing_social_network).height, 10);
 
             landing_title.style.marginTop = (window.innerHeight - landing_content_height) / 2 + 'px';
+        }
+
+        if (window.innerWidth >= 345*3) {
+            document.getElementById('review-carousel').style.width = 345*3 + 'px';
+        } else if (window.innerWidth >= 345*2) {
+            document.getElementById('review-carousel').style.width = 345*2 + 'px';
+        } else {
+            document.getElementById('review-carousel').style.width = 345 + 'px';
         }
     };
 
@@ -32,7 +40,7 @@
 
     window.addEventListener('resize', function(event) {
         event.preventDefault();
-        
+
         var simple = document.getElementById('simple-intutive-powerful');
         var simple_extends = document.getElementById('simple-intutive-extends');
 
@@ -136,19 +144,18 @@
         }
     }, false);
 
+    $('#reality-carousel').flexslider({
+        animation: "slide",
+        directionNav: window.isMobile ? false : true,
+        //itemWidth: 314,
+        itemMargin: 0
+    });
     $('#review-carousel').flexslider({
         animation: "slide",
         directionNav: window.isMobile ? false : true,
         itemWidth: 345,
         itemMargin: 0
     });
-    $('#reality-carousel').flexslider({
-        animation: "slide",
-        directionNav: window.isMobile ? false : true,
-        itemWidth: 314,
-        itemMargin: 0
-    });
-
 
     var header = document.getElementById('header');
     var mainHeaderTrigger = document.getElementById('popapp-landing');
@@ -179,7 +186,7 @@
                 if (scrollTop === 0) {
                     header.className = 'header';
                     isFloatStep = false;
-                    isFloatHeader = false;   
+                    isFloatHeader = false;
                 }
             }
         }
@@ -203,7 +210,7 @@
                 if (scrollTop === 0) {
                     header.className = 'header';
                     isFloatStep = false;
-                    isFloatHeader = false;   
+                    isFloatHeader = false;
                 }
             }
         }
