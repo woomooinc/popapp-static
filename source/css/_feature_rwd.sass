@@ -1,11 +1,18 @@
 @media(min-width: 48em)
+  .features .sections
+    margin-bottom: 0
+    .shadow
+      display: block
+      width: 100%
+      height: 0
+      position: relative
+      +single-box-shadow(#a2a2a2, 0px, 0px, 70px, 5px)
   .fast-importing,
   .rapid-duplication,
   .organize-your-projects,
   .scrolling,
   .transitions,
   .gestures,
-  .dropbox-sync,
   .sections.share,
   .co-working-mode,
   .multi-platform-support
@@ -30,7 +37,7 @@
         left: #{(53 / $font-size) + "em"}
         bottom: #{(118 / $font-size) + "em"}
         right: #{(47 / $font-size) + "em"}
-        background: rgba(0, 0, 0, 0.2)
+        background-color: rgba(0, 0, 0, 0.2)
     .ipad-video
       float: left
       width: #{(833 / $font-size) + "em"}
@@ -46,8 +53,7 @@
         left: #{(83 / $font-size) + "em"}
         bottom: #{(35 / $font-size) + "em"}
         right: #{(93 / $font-size) + "em"}
-        background: rgba(0, 0, 0, 0.2)
-
+        background-color: rgba(0, 0, 0, 0.2)
   .feature-landing
     background: url(../img/bg_feature.png) 0 0 no-repeat white
     +background-size(auto 100%)
@@ -69,48 +75,62 @@
       margin: #{(40 - $font-size)/ $font-size + "em"} auto #{(118 - $font-size)/ $font-size + "em"} auto
       background-image: url(../img/feature_128bit_large.png)
   .fast-importing
-    max-width: #{(500 + 376 + 180) / $font-size + "em"}
-    margin: 0 auto
+    > .content
+      max-width: #{(500 + 376 + 180) / $font-size + "em"}
+      margin: 0 auto
     .description
       float: left
       width: #{(500 / $font-size) + "em"}
       height: #{(175 / $font-size) + "em"}
-      margin: #{(326 / $font-size) + "em"} #{(180 / $font-size) + "em"} 0 0
+      margin: #{(270 / $font-size) + "em"} #{(180 / $font-size) + "em"} 0 0
       background-image: url(../img/feature_import_large.png)
   .rapid-duplication
-    max-width: #{(500 + 376 + 180) / $font-size + "em"}
-    margin: 0 auto
+    > .content
+      max-width: #{(500 + 376 + 180) / $font-size + "em"}
+      margin: 0 auto
     .description
       float: right
       width: #{(500 / $font-size) + "em"}
       height: #{(239 / $font-size) + "em"}
-      margin: #{(326 / $font-size) + "em"} 0 0 0
+      margin: #{(256 / $font-size) + "em"} 0 0 0
       background-image: url(../img/feature_rapid_large.png)
     .iphone-video
       float: right
       margin-right: #{(180 / $font-size) + "em"}
   .organize-your-projects
-    max-width: #{(500 + 376 + 180) / $font-size + "em"}
-    margin: 0 auto
+    > .content
+      max-width: #{(500 + 376 + 180) / $font-size + "em"}
+      margin: 0 auto
     .description
       float: left
       width: #{(500 / $font-size) + "em"}
       height: #{(180 / $font-size) + "em"}
-      margin: #{(326 / $font-size) + "em"} #{(180 / $font-size) + "em"} 0 0
+      margin: #{(284 / $font-size) + "em"} #{(180 / $font-size) + "em"} 0 0
       background-image: url(../img/feature_organize_large.png)
   .transitions
-    max-width: #{(500 + 376 + 150) / $font-size + "em"}
     overflow: inherit
-    margin: 0 auto
+    > .content
+      max-width: #{(500 + 376 + 150) / $font-size + "em"}
+      max-height: #{(600 / $font-size) + "em"}
+      overflow: inherit
+      margin: 0 auto
     .description
       float: right
       width: #{(500 / $font-size) + "em"}
       height: #{(160 / $font-size) + "em"}
-      margin: #{(196 / $font-size) + "em"} 0 0 #{(150 / $font-size) + "em"} 
+      margin: #{(322 / $font-size) + "em"} 0 0 #{(150 / $font-size) + "em"} 
       background-image: url(../img/feature_transition_large.png)
     .ipad-video
       float: right
-      margin-left: #{(376 - 833) / $font-size + "em"}
+      margin:
+        left: #{(376 - 833) / $font-size + "em"}
+        top: 8em
+      width: #{(833 / $font-size) + "em"}
+      max-width: #{(833 / $font-size) + "em"}
+      height: #{(567 / $font-size) + "em"}
+      background-image: url(../img/ipad.png)
+      .video
+        display: block
   .gestures
     .description
       width: #{(862 / $font-size) + "em"}
@@ -120,6 +140,13 @@
     .ipad-video
       float: none
       margin: 0 auto
+    .video
+      background:
+        image: url(../img/feature_gesture_ipad_video.png)
+        position: 50% 50%
+        repeat: no-repeat
+        color: transparent
+      +background-size(auto 100%)
   .dropbox-sync
     .description
       width: #{(818 / $font-size) + "em"}
@@ -130,15 +157,19 @@
     .dropbox
       display: none
     .js-extends
+      width: 80%
+      max-width: #{(1200 / $font-size) + "em"}
       margin: 0 auto
+      display: block
   .sections.share
-    max-width: #{(450 + 440 + 120) / $font-size + "em"}
-    margin: 0 auto
+    > .content
+      max-width: #{(450 + 440 + 120) / $font-size + "em"}
+      margin: 0 auto
     .description
       float: right
       width: #{(450 / $font-size) + "em"}
       height: #{(270 / $font-size) + "em"}
-      margin: #{(350 / $font-size) + "em"} 0 0 #{(120 / $font-size) + "em"}
+      margin: #{(378 / $font-size) + "em"} 0 0 #{(120 / $font-size) + "em"}
       background-image: url(../img/feature_share_large.png)
     .iphone-video
       float: right
@@ -152,16 +183,18 @@
         bottom: #{(135 / $font-size) + "em"}
         right: #{(34 / $font-size) + "em"}
   .co-working-mode
-    max-width: #{(360 + 440 + 120) / $font-size + "em"}
-    margin: 0 auto
+    > .content
+      max-width: #{(360 + 440 + 120) / $font-size + "em"}
+      margin: 0 auto
     .description
       float: left
       width: #{(360 / $font-size) + "em"}
       height: #{(150 / $font-size) + "em"}
-      margin: #{(350 / $font-size) + "em"} #{(120 / $font-size) + "em"} 0 0
+      margin: #{(406 / $font-size) + "em"} #{(120 / $font-size) + "em"} 0 0
       background-image: url(../img/feature_co-working_large.png)
     .iphone-video
-      width: #{(440 / $font-size) + "em"}
+      width: 100%
+      max-width: #{(440 / $font-size) + "em"}
       height: #{(908 / $font-size) + "em"}
       margin-top: #{(112 / $font-size) + "em"}
       background-image: url(../img/iPhone-large.png)
@@ -170,6 +203,12 @@
         left: #{(46 / $font-size) + "em"}
         bottom: #{(135 / $font-size) + "em"}
         right: #{(34 / $font-size) + "em"}
+        background:
+          image: url(../img/feature_co-working-video.png)
+          position: 50% 50%
+          repeat: no-repeat
+          color: transparent
+        +background-size(auto 100%)
   .multi-platform-support
     .description
       width: #{(848 / $font-size) + "em"}
@@ -185,9 +224,10 @@
         position: 50% 50%
         repeat: no-repeat
         color: transparent
-      +background-size(auto 100%)
+      +background-size(100% auto)
   .feature.download-app
     background-image: url(../img/bg-feature-last.png)
+    +background-size(100% 100%)
 
 @media(min-width: 91.56em)
   .feature-landing

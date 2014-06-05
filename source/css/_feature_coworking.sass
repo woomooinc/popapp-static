@@ -11,3 +11,21 @@
       color: transparent
     +hide-text()
     +background-size(100% auto)
+  .iphone-video
+    position: relative
+    width: 90%
+    max-width: #{(440 / $font-size) + "em"}
+    height: #{(590 / $font-size) + "em"}
+    margin: 0 auto
+    .video
+      position: absolute
+      top: 0
+      bottom: 0
+      left: 0
+      right: 0
+      background:
+        image: url(../img/feature_co-working-video.png)
+        position: 50% 50%
+        repeat: no-repeat
+        color: transparent
+      +background-size(100% auto)

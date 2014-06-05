@@ -32,7 +32,10 @@
     .hidden-mobile
       display: block
     ul li
-      font-family: "Gotham Book", sans-serif
+      font:
+        family: "Roboto", "Gotham Book", sans-serif
+        weight: 100
+        size: 1.2em
       display: inline-block
       color: white
       vertical-align: top
@@ -53,6 +56,7 @@
             color: white
       &.countries
         position: relative
+        font-size: 0.8em
         width: 2em
         height: auto
         margin:
@@ -120,11 +124,11 @@
     display: block
     text-align: center
     overflow: hidden
-    margin-bottom: #{(25 / $font-size) + "em"}
+    //margin-bottom: #{(25 / $font-size) + "em"}
     .download-ios,
     .download-android
-      width: #{(202 / $font-size) + "em"}
-      height: #{(66 / $font-size) + "em"}
+      width: #{(160 / $font-size) + "em"}
+      height: #{(56 / $font-size) + "em"}
       display: inline-block
       background:
         position: 0% 0%

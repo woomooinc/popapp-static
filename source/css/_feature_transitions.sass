@@ -1,4 +1,5 @@
 .transitions
+  max-height: #{(1200 / $font-size) + "em"}
   .description
     width: #{(303 / $font-size) + "em"}
     max-width: 320px
@@ -11,3 +12,16 @@
       color: transparent
     +hide-text()
     +background-size(100% auto)
+  .ipad-video
+    width: 90%
+    max-width: #{(406 / $font-size) + "em"}
+    height: #{(521 / $font-size) + "em"}
+    margin: 2em auto
+    background:
+      image: url(../img/feature_transition_video_m.png)
+      position: 50% 50%
+      repeat: no-repeat
+      color: transparent
+    +background-size(100% auto)
+  .video
+    display: none

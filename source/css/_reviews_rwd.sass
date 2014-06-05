@@ -9,9 +9,9 @@
     margin: 0 auto
     text-align: center
     .item
-      width: 33%
+      width: #{346 / $font-size + "em"}
+      margin: 0 #{10 / $font-size + "em"}
       display: inline-block
-      max-width: #{345 / $font-size + "em"}
     .icon-and-title
       position: absolute
       bottom: #{(75 / $font-size) + "em"}
@@ -28,7 +28,7 @@
       height: #{(50 / $font-size) + "em"}
       margin-top: #{((65 - 50) / 2) / $font-size + "em"}
   $ur-title: 212 239 146
-  $ur-desc-w: 347 363 362
+  $ur-desc-w: 346 346 346
   $ur-desc-h: 124 141 141
   $i: 1
   @each $ur in "jason-fried" "phill-ryu" "steve-chen"

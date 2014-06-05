@@ -1,34 +1,58 @@
-(function() {
+(function($) {
+    var reviewCarouselWidth = 366;
+
     var landingResize = function() {
         var landing = document.getElementById('popapp-landing');
+        var landing_title = document.getElementById('landing--title');
 
-        if (window.innerHeight <= 650) {
-            landing_title.style.marginTop = '10px';
-        } else {
-            landing.style.height = window.innerHeight + 'px';
+            if (landing) {
+            if (window.innerHeight <= 650) {
+                landing.style.height = '650px';
+                landing_title.style.marginTop = '100px';
+            } else {
+                var height = window.innerHeight >= 1000 ? 1000 : window.innerHeight;
+                landing.style.height = height + 'px';
 
-            var landing_title = document.getElementById('landing--title');
-            var landing_watch_video = document.getElementById('landing--watch-video');
-            var landing_download_app = document.getElementById('landing--download-app');
-            var landing_social_network = document.getElementById('landing--social-network');
+                var landing_watch_video = document.getElementById('landing--watch-video');
+                var landing_download_app = document.getElementById('landing--download-app');
+                var landing_social_network = document.getElementById('landing--social-network');
 
-            var landing_content_height = parseInt(window.getComputedStyle(landing_title).height, 10) +
-            parseInt(window.getComputedStyle(landing_title).marginBottom, 10) +
-            parseInt(window.getComputedStyle(landing_watch_video).height, 10) +
-            parseInt(window.getComputedStyle(landing_watch_video).marginBottom, 10) +
-            parseInt(window.getComputedStyle(landing_download_app).height, 10) +
-            parseInt(window.getComputedStyle(landing_download_app).marginBottom, 10) +
-            parseInt(window.getComputedStyle(landing_social_network).height, 10);
+                var landing_content_height = parseInt(window.getComputedStyle(landing_title).height, 10) +
+                parseInt(window.getComputedStyle(landing_title).marginBottom, 10) +
+                parseInt(window.getComputedStyle(landing_watch_video).height, 10) +
+                parseInt(window.getComputedStyle(landing_watch_video).marginBottom, 10) +
+                parseInt(window.getComputedStyle(landing_download_app).height, 10) +
+                parseInt(window.getComputedStyle(landing_download_app).marginBottom, 10) +
+                parseInt(window.getComputedStyle(landing_social_network).height, 10);
 
-            landing_title.style.marginTop = (window.innerHeight - landing_content_height) / 2 + 'px';
+                landing_title.style.marginTop = (height - landing_content_height) / 2 + 'px';
+            }
+
+            var reviewCarouselMargin = 0;
+
+            if (window.innerWidth >= reviewCarouselWidth*3 + 30) {
+                reviewCarouselMargin = 20;
+                document.getElementById('review-carousel').style.width = (reviewCarouselWidth*3 + 30) + 'px';
+            } else if (window.innerWidth >= reviewCarouselWidth*2 + 20) {
+                reviewCarouselMargin = 20;
+                document.getElementById('review-carousel').style.width = (reviewCarouselWidth*2 + 20) + 'px';
+            } else {
+                reviewCarouselMargin = 0;
+                document.getElementById('review-carousel').style.width = reviewCarouselWidth + 'px';
+            }
+
+            $('#review-carousel').flexslider({
+                animation: "slide",
+                directionNav: window.isMobile ? false : true,
+                itemWidth: reviewCarouselWidth,
+                itemMargin: reviewCarouselMargin
+            });
         }
 
-        if (window.innerWidth >= 345*3) {
-            document.getElementById('review-carousel').style.width = 345*3 + 'px';
-        } else if (window.innerWidth >= 345*2) {
-            document.getElementById('review-carousel').style.width = 345*2 + 'px';
+        if (window.innerWidth <= 768) {
+            $('#feature-share-video').attr('width', '90%');
         } else {
-            document.getElementById('review-carousel').style.width = 345 + 'px';
+            $('#feature-share-video').attr('width', '100%');
         }
     };
 
@@ -44,7 +68,9 @@
         var simple = document.getElementById('simple-intutive-powerful');
         var simple_extends = document.getElementById('simple-intutive-extends');
 
-        simple.style.height = parseInt(simple_extends.offsetTop, 10) + parseInt(window.getComputedStyle(simple_extends).height, 10)/* 618px */ + 'px';
+        if (simple) {
+            simple.style.height = parseInt(simple_extends.offsetTop, 10) + parseInt(window.getComputedStyle(simple_extends).height, 10)/* 618px */ + 'px';
+        }
 
         landingResize();
     }, false);
@@ -150,12 +176,6 @@
         //itemWidth: 314,
         itemMargin: 0
     });
-    $('#review-carousel').flexslider({
-        animation: "slide",
-        directionNav: window.isMobile ? false : true,
-        itemWidth: 345,
-        itemMargin: 0
-    });
 
     var header = document.getElementById('header');
     var mainHeaderTrigger = document.getElementById('popapp-landing');
@@ -217,4 +237,4 @@
     }, false);
 
     landingResize();
-})();
+})(jQuery);

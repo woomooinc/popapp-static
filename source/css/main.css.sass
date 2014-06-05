@@ -27,6 +27,8 @@ html, body
   width: 100%
   height: 3.5714em
   z-index: 999
+  font-family: "Roboto", "Gotham Book", sans-serif
+  font-weight: 100
   +single-transition(all)
   .logo
     width: #{(78 / $font-size) + "em"}
@@ -74,6 +76,9 @@ html, body
   float: right
   position: relative
   overflow: hidden
+  font:
+    family: "Roboto", "Gotham Book", sans-serif
+    weight: 100
   .bar
     position: relative
     width: 2em
@@ -94,8 +99,9 @@ html, body
 
 #footer
   text-align: center
-  background: white
+  background: #f2f2f2
   padding-bottom: #{(26 / $font-size) + "em"}
+  padding-top: 2.5em
   +single-transition(all)
 
 #container
@@ -144,8 +150,12 @@ html, body
     clear: both
     text-align: center
     margin: 0 2em
+    font:
+      family: "Roboto", "Gotham Book", sans-serif
+      weight: 100
     .item
       padding: #{(20 / $font-size) + "em"} 0
+      letter-spacing: 1px
       a
         color: white
         text-decoration: none
@@ -195,7 +205,7 @@ html, body
   position: relative
   z-index: 10
   text-align: center
-  padding-top: #{26 / $font-size + "em"}
+  padding-top: #{14 / $font-size + "em"}
   .desktop
     display: none
   .mobile
@@ -207,7 +217,7 @@ html, body
     background:
       position: 50% 50%
       repeat: no-repeat
-      color: white
+      color: transparent
     +hide-text()
     +background-size(100% auto)
     &.twitter
@@ -218,7 +228,7 @@ html, body
 .woomoo-copyright
   width: 90%
   margin: 0 auto
-  padding: 1em 0 0 0
+  padding: 0.6em 0 0 0
   display: block
   color: #999999
   text-align: center
@@ -239,12 +249,12 @@ html, body
     display: inline-block
     width: #{(200 / $font-size) + "em"}
     height #{(20 / $font-size) + "em"}
-    margin-top: 1em
+    margin-top: 0.2em
     background:
       image: url(../img/woomoo.png)
       position: 50% 50%
       repeat: no-repeat
-      color: white
+      color: transparent
     +hide-text()
     +background-size(100% auto)
 
@@ -294,6 +304,30 @@ html, body
 
 
 /* Feature */
+.features
+  .sections
+    margin-bottom: 4em
+    &.multi-platform-support
+      margin-bottom: 0
+      padding-bottom: 2em
+    &.download-app
+      padding-bottom: 0
+    > .content
+      clear: both
+      height: 100%
+    .shadow
+      display: none
+  .scrolling, .gestures, .iphone-video, .ipad-video, .js-extends
+    position: relative
+    display: none
+  .iphone-video, .ipad-video
+    margin-top: 2em
+    display: block
+  .fast-importing,
+  .organize-your-projects,
+  .dropbox-sync,
+  .multi-platform-support
+    background-color: #f8f8f8
 @import _feature_landing
 @import _feature_ssl
 @import _feature_fast_import
@@ -306,10 +340,6 @@ html, body
 @import _feature_share
 @import _feature_coworking
 @import _feature_multi_platform
-.features
-  .scrolling, .iphone-video, .ipad-video, .js-extends
-    position: relative
-    display: none
 
 /* Sketchpad */
 @import _sketchpad

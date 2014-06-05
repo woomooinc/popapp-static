@@ -1,5 +1,5 @@
 .integrates-into-your-workflow
-  height: #{(1000 / $font-size) + "em"}
+  //min-height: #{(800 / $font-size) + "em"}
   .intergrate
     width: #{(780 / $font-size) + "em"}
     max-width: 90%
@@ -10,6 +10,12 @@
     display: none
   .js-extends
     width: 80%
-    max-width: #{(1300 / $font-size) + "em"}
+    max-width: #{(1200 / $font-size) + "em"}
     margin: 0 auto
     display: block
+  .shadow
+    width: 100%
+    height: 0
+    position: absolute
+    bottom: 0
+    +single-box-shadow(#e0e0e0, 0px, 0px, 50px, 20px)
