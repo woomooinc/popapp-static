@@ -237,4 +237,32 @@
     }, false);
 
     landingResize();
+
+    // Below code by JD
+    // Landing clip
+    var $landingClipWrap = $('#landing-clip-wrap');
+    var $landingClip = $('#landing-clip')
+    var showLandingClipWrap = function() {
+      $landingClipWrap.addClass('show');
+      $landingClip[0].play();
+      Mousetrap.bind('esc', function() {
+        hideLandingClipWrap();
+      });
+    }
+    var hideLandingClipWrap = function() {
+      $landingClipWrap.removeClass('show');
+      $landingClip[0].pause();
+      Mousetrap.reset();
+    }
+    $landingClipWrap.click(function(e) {
+      if ($(e.target).attr('id') === 'landing-clip-bg'){
+        hideLandingClipWrap();
+      }
+    });
+    $('#landing--watch-video').click(function(e) {
+      showLandingClipWrap();
+    });
+    $('#landing-clip-close').click(function(e) {
+      hideLandingClipWrap();
+    });
 })(jQuery);

@@ -6,8 +6,12 @@
 @import compass/css3/background-size
 @import compass/utilities/general/clearfix
 @import compass/typography/text/replacement
-
+// [bug] - don't know why middleman block ad-hoc compass extension
+@import extensions/jd_extensions/stylesheets/_jd_extensions
 @import base
+
+a
+  cursor: pointer
 
 html, body
   font-size: #{$font-size + "px"}
@@ -317,7 +321,7 @@ html, body
       height: 100%
     .shadow
       display: none
-  .scrolling, .gestures, .iphone-video, .ipad-video, .js-extends
+  .scrolling, .iphone-video, .ipad-video, .js-extends
     position: relative
     display: none
   .iphone-video, .ipad-video

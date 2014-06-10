@@ -14,5 +14,5 @@ gem "wdm", "~> 0.1.0", :platforms => [:mswin, :mingw]
 gem "tzinfo-data", platforms: [:mswin, :mingw]
 
 gem "sass"
-gem "compass"
+gem "compass", "~> 1.0.0.alpha.19"
 gem "susy"

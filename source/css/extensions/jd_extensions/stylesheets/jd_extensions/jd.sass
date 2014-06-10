@@ -1,0 +1,218 @@
+=clearfix-visible
+  &:after
+    content: ""
+    display: table
+    clear: both
+
+=overflow-x-with-touch
+  overflow-x: auto
+  overflow-y: hidden
+  -webkit-overflow-scrolling: touch
+
+=overflow-y-with-touch
+  overflow-x: hidden
+  overflow-y: auto
+  -webkit-overflow-scrolling: touch
+
+=image-width-height( $img_url )
+  width: +image-width( $img_url )
+  height: +image-height( $img_url )
+
+=background-image-retina( $image )
+  background-image: image-url( $image )
+
+  // If we have a retina image then add styles for it too
+  @if file_exists( retina_filename( $image ))
+    @media only screen and ( -webkit-min-device-pixel-ratio: 2 )
+      +background-size( image-width( $image ) auto )
+      background-image: image-url( retina_filename( $image ))
+
+=inline-background-image-retina($image)
+  background-image: inline-image( $image )
+
+  // If we have a retina image then add styles for it too
+  @if file_exists( retina_filename( $image ))
+
+    @media only screen and (-webkit-min-device-pixel-ratio: 2 )
+      +background-size( image-width( $image ) auto )
+      background-image: inline-image( retina_filename( $image ))
+
+=ios-icon( $diameter, $is_ios_7: false )
+  $stock_border_radius: 10px
+  $stock_diameter: 60px
+
+  @if $is_ios_7
+    $stock_border_radius: 17px
+    $stock_diameter: 72px
+
+  $border-radius : $stock_border_radius / $stock_diameter * $diameter
+
+  +square( $diameter )
+  +border-radius( $border-radius )
+
+=square( $width )
+  width: $width
+  height: $width
+
+=circle( $diameter )
+  +border-radius( $diameter / 2 )
+  width: $diameter
+  height: $diameter
+
+=triangle( $top, $right, $bottom, $left, $top-color, $right-color, $bottom-color, $left-color )
+  width: 0
+  height: 0
+  border-style: solid
+  border-width: $top $right $bottom $left
+  border-color: $top-color $right-color $bottom-color $left-color
+
+=calc($property, $expression)
+  #{$property}: -moz-calc( #{$expression} )
+  #{$property}: -webkit-calc( #{$expression} )
+  #{$property}: calc( #{$expression} )
+
+=vertical-align( $content-height )
+  +calc( top, 50% - #{$content-height} / 2 )
+
+=horizontal-align( $content-width )
+  +calc( left, 50% - #{$content-width} / 2 )
+
+=horizontal-vertical-align-method-pseudo-wrap
+  text-align: center
+
+  &:before
+    content: ''
+    display: inline-block
+    vertical-align: middle
+    height: 100%
+
+=horizontal-vertical-align-method-pseudo-content
+  display: inline-block
+  vertical-align: middle
+
+=horizontal-vertical-align-method-inline-block
+  text-align: center
+
+  &:after
+    display: inline-block
+    vertical-align: middle
+    content: ''
+    height: 100%
+    // To offset spacing. May vary by font
+    margin-left: -0.25em
+
+  > *:first-child
+    display: inline-block
+    vertical-align: middle
+    // Prevents issues with long content causes the content block to be pushed to the top
+    max-width: 99%
+
+=relative( $top: default, $right: default, $bottom: default, $left: default )
+  position: relative
+  @if $top != default
+    top: $top
+
+  @if $right != default
+    right: $right
+
+  @if $left != default
+    left: $left
+
+  @if $bottom != default
+    bottom: $bottom
+
+=absolute( $top: default, $right: default, $bottom: default, $left: default )
+  position: absolute
+  @if $top != default
+    top: $top
+
+  @if $right != default
+    right: $right
+
+  @if $left != default
+    left: $left
+
+  @if $bottom != default
+    bottom: $bottom
+
+=fixed( $top: default, $right: default, $bottom: default, $left: default )
+  position: fixed
+  @if $top != default
+    top: $top
+
+  @if $right != default
+    right: $right
+
+  @if $left != default
+    left: $left
+
+  @if $bottom != default
+    bottom: $bottom
+
+=crisp-image
+  image-rendering: -moz-crisp-edges
+  image-rendering: -o-crisp-edges
+  image-rendering: -webkit-optimize-contrast
+  -ms-interpolation-mode: nearest-neighbor
+
+=position-transition
+  -webkit-transition-property: top, left, right, bottom, width, height
+  -webkit-transition-duration: 0.3s
+
+=bg-img-transition
+  -webkit-transition-property: background-image
+  -webkit-transition-duration: 0.5s
+
+=top-transition
+  -webkit-transition-property: top
+  -webkit-transition-duration: 0.3s
+
+=right-transition
+  -webkit-transition-property: right
+  -webkit-transition-duration: 0.3s
+
+=bottom-transition
+  -webkit-transition-property: bottom
+  -webkit-transition-duration: 0.3s
+
+=left-transition
+  -webkit-transition-property: left
+  -webkit-transition-duration: 0.3s
+
+=opacity-transition
+  -webkit-transition-property: opacity
+  -webkit-transition-duration: 0.3s
+
+=width-transition
+  -webkit-transition-property: width
+  -webkit-transition-duration: 0.3s
+
+=opacity-linktip-transition
+  -webkit-transition-property: opacity
+  -webkit-transition-duration: 0.3s
+  -webkit-transition-delay: 0.3s
+
+=background-transition
+  -webkit-transition-property: background
+  -webkit-transition-duration: 0.3s
+
+=box-shadow-transition
+  -webkit-transition-property: box-shadow
+  -webkit-transition-duration: 0.07s
+
+=color-transition
+  -webkit-transition-property: color
+  -webkit-transition-duration: 0.3s
+
+=white-text-shadow
+  text-shadow: 0 1px 0 rgba(255,255,255,0.5)
+
+=black-text-shadow($y: -1px)
+  text-shadow: 0 $y 0 rgba(0,0,0,0.5)
+
+=box-drop-shadow($color: white)
+  -webkit-box-shadow: 0 1px 0 fade_out($color, 0.6)
+
+=pushed
+  position: relative
+  top: 1px
