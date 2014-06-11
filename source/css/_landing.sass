@@ -68,7 +68,6 @@
       color: transparent
     +single-transition(all)
   .bg-landing-skechpad
-    // +image-width-height('../img/bg-landing-skechpad.png')
     width: #{592 / $font-size + "em"}
     height: #{552 / $font-size + "em"}
     background-image: url(../img/bg-landing-skechpad.png)
@@ -100,5 +99,5 @@
   #landing-clip-close
     +absolute(30px, 30px, default, default)
     +image-width-height('../img/close-video.png')
-    background-image: url(../img/close-video.png)
+    background-image: image-url('close-video')
     z-index: 10
